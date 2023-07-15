@@ -25,3 +25,7 @@ Route::get('/register-done',function(){
 // Route::get('test_mail', 'App\Http\Controllers\UserController@testMail');
 Route::get('get-post', [SimpleGateHttpController::class,'getPost']);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
