@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SimpleGateHttpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test_mail', 'App\Http\Controllers\UserController@testMail');
+Route::get('/register-done',function(){
+    return ['register done'];
+})->name('register.done');
+
+// Route::get('test_mail', 'App\Http\Controllers\UserController@testMail');
+Route::get('get-post', [SimpleGateHttpController::class,'getPost']);
+
