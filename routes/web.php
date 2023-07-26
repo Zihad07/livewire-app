@@ -18,14 +18,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register-done',function(){
+Route::get('/register-done', function () {
     return ['register done'];
 })->name('register.done');
 
 // Route::get('test_mail', 'App\Http\Controllers\UserController@testMail');
-Route::get('get-post', [SimpleGateHttpController::class,'getPost']);
+Route::get('get-post', [SimpleGateHttpController::class, 'getPost']);
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/products', function () {
+    return view('product.index');
+});
+
+
+Route::get('/tostmessage', function () {
+    return view('layouts.zapp');
+});
